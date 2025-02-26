@@ -29,7 +29,7 @@ function ForEx() {
             </ul>
 
             <ul>
-                {arr.map( (m,idx) => <li key={idx}> {m.name} -- {m.price} </li>)}
+                {arr.map( (m,idx) => <li key={idx} className={"underline m-2 "}> {m.name} -- {m.price} </li>)}
             </ul>
         </div>
     );

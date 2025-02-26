@@ -12,7 +12,7 @@ function ForEx2() {
     //const lis = arr.map(m => <li key={m.no}>{m.name}</li>)
 
     return (
-        <div>
+        <div className={'m-2 border-2'}>
             <ul>
                 {makeLis(arr)}
             </ul>
