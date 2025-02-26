@@ -19,6 +19,18 @@ function ForEx() {
             <ul>
                 {arr.map( m => <li key={m.no}> {m.name} -- {m.price} </li>)}
             </ul>
+
+            <ul>
+                {arr.map( ({no,name,price} ) =>
+                    <li key={no}>
+                        {name} -- {price}
+                    </li>
+                )}
+            </ul>
+
+            <ul>
+                {arr.map( (m,idx) => <li key={idx}> {m.name} -- {m.price} </li>)}
+            </ul>
         </div>
     );
 }
