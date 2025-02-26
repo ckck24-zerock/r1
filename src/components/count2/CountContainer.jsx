@@ -7,8 +7,8 @@ function CountContainer() {
     //상태
     const [num, setNum] = useState(1)
 
-    const plus = () => {
-        setNum(num + 1)
+    const plus = (amount) => {
+        setNum(num + amount)
     }
 
 
