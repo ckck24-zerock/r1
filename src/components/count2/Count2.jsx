@@ -2,6 +2,7 @@ import {useState} from "react";
 
 function Count2() {
 
+    //number였을때는 문제가 없었다.
     const [count, setCount] = useState({num:0})
 
     const plus = () => {
@@ -9,7 +10,7 @@ function Count2() {
 
         console.log(count)
 
-        setCount(count)
+        setCount({...count})
     }
 
 
