@@ -12,9 +12,14 @@ function TodoAdd() {
         console.log(res)
     }
     return (
-        <div>
-            <button onClick={handleClick}>SEND</button>
-        </div>
+        <>
+            <div>
+                <button onClick={handleClick}>SEND</button>
+            </div>
+            <div>
+                <button onClick={handleClick}>SEND</button>
+            </div>
+        </>
     );
 }
 
