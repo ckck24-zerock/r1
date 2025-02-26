@@ -12,7 +12,10 @@ function Count2() {
         //temp.num += 1
         //setCount(temp)
 
-        setCount({num: count.num + 1})
+        //setCount({num: count.num + 1})
+
+        count.num += 1
+        setCount({...count})
     }
 
 
