@@ -1,17 +1,22 @@
 import {useState} from "react";
 
+let value = 100;
 
 function ArrayTest() {
 
+
+    //상태를 변경해서 다시 렌더링 유도하려면 새로운 상태 객체로 만들어야 한다.
     const [arr, setArr] = useState([1,2,3])
 
     const handleClick = () => {
 
-        arr.push('A')
+        value++;
+
+        arr.push( value )
 
         console.log(arr)
 
-        setArr(arr)
+        setArr([...arr])
     }
 
     return (
