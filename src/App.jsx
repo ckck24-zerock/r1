@@ -9,7 +9,6 @@ function App() {
 
   return (
     <div className={'m-2 p-2 bg-blue-200 border-2'}>
-        <Count2></Count2>
         <ArrayTest></ArrayTest>
     </div>
   )
