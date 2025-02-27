@@ -13,7 +13,9 @@ function TodoItem({todo,removeTodo}) {
                     {title}
                 </div>
                 <div>
-                    <button onClick={() => {
+                    <button
+                        className={'border-2 p-2'}
+                        onClick={() => {
                         removeTodo(tid)
                     }} >
                         REMOVE
