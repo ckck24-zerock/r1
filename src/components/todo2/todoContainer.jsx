@@ -1,7 +1,7 @@
 import TodoInput from "./todoInput.jsx";
 import TodoSubList from "./todoSubList.jsx";
 import {useState} from "react";
-
+import { v4 as uuidv4 } from 'uuid';
 //컨테이너
 //공유데이터 //매니저
 function TodoContainer() {
@@ -11,6 +11,9 @@ function TodoContainer() {
 
     //기능
     const addText = (text) => {
+
+        const obj = {tid: uuidv4() , title:text }
+
         setArr([...arr,text])
     }
 
