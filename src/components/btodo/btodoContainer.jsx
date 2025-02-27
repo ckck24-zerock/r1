@@ -46,6 +46,10 @@ function BtodoContainer() {
         setCurrent(currentTodo)
     }
 
+    function hideMod(){
+        setCurrent(null)
+    }
+
     return (
         <div className={'w-full h-full bg-cyan-200 min-h-full'}>
             B Todo Containner <button onClick={() => setOper('I')}>ADD</button>
@@ -60,7 +64,9 @@ function BtodoContainer() {
             {current !== null &&
                 <BtodoMod current={current}
                           removeTodo={removeTodo}
-                          updateTodo={updateTodo}></BtodoMod>
+                          updateTodo={updateTodo}
+                          hideMod={hideMod}
+                ></BtodoMod>
             }
         </div>
     );

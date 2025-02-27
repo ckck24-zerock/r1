@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function BtodoMod({current, removeTodo, updateTodo}) {
+function BtodoMod({current, removeTodo, updateTodo, hideMod}) {
 
     const [titleStr, setTitleStr] = useState(current.title)
 
@@ -28,7 +28,7 @@ function BtodoMod({current, removeTodo, updateTodo}) {
                     <div>
                         <button onClick={() => removeTodo(current.tid)}>삭제</button>
                         <button onClick={() => updateTodo(current.tid, titleStr)}>수정</button>
-                        <button>취소</button>
+                        <button onClick={() => hideMod()}>취소</button>
                     </div>
                 </div>
                 
