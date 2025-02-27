@@ -21,9 +21,10 @@ function TodoSubList({arr, removeTodo}) {
                 )}
             </ul>
 
-            <Modal isOpen={current !== null} onClose={() => setCurrent(null) }>
-
+            {current &&
+            <Modal todo={current} onClose={() => setCurrent(null) }>
             </Modal>
+            }
 
         </div>
     );
