@@ -1,5 +1,5 @@
 
-function TodoItem({todo,removeTodo}) {
+function TodoItem({todo, showModal}) {
 
     const {tid,title} = todo
 
@@ -13,13 +13,7 @@ function TodoItem({todo,removeTodo}) {
                     {title}
                 </div>
                 <div>
-                    <button
-                        className={'border-2 p-2'}
-                        onClick={() => {
-                        removeTodo(tid)
-                    }} >
-                        REMOVE
-                    </button>
+                    <button onClick={showModal}>MOD/DEL</button>
                 </div>
             </div>
         </li>
