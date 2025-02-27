@@ -1,5 +1,5 @@
 
-function TodoItem({todo}) {
+function TodoItem({todo,removeTodo}) {
 
     const {tid,title} = todo
 
@@ -11,6 +11,13 @@ function TodoItem({todo}) {
                 </div>
                 <div>
                     {title}
+                </div>
+                <div>
+                    <button onClick={() => {
+                        removeTodo(tid)
+                    }} >
+                        REMOVE
+                    </button>
                 </div>
             </div>
         </li>

@@ -17,13 +17,21 @@ function TodoContainer() {
         setArr([...arr,obj])
     }
 
+    const removeTodo = (tid) => {
+
+        const result = arr.filter(todo => todo.tid !== tid)
+
+        setArr(result)
+    }
+
+
 
     return (
         <div className={'w-full bg-blue-300 p-5'}>
             <div>Todo Container</div>
 
             <TodoInput addText = {addText} ></TodoInput>
-            <TodoSubList arr={arr}></TodoSubList>
+            <TodoSubList arr={arr} removeTodo={removeTodo}></TodoSubList>
         </div>
     );
 }
