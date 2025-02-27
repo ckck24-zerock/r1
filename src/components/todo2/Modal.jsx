@@ -1,6 +1,6 @@
 
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
@@ -19,7 +19,14 @@ const Modal = ({ isOpen, onClose, children }) => {
                 >
                     ✖
                 </button>
-                {children}
+                <h2 className="text-xl font-bold mb-4">모달 제목</h2>
+                <p>이것은 모달 내용입니다.</p>
+                <button
+                    className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+                    onClick={() => onClose()}
+                >
+                    닫기
+                </button>
             </div>
         </div>
     );
