@@ -15,6 +15,8 @@ function BtodoContainer() {
         const newTodo = {tid: uuidv4(), title:title}
 
         setArr([...arr, newTodo])
+
+        setOper('L')
     }
 
     function showMod(tid) {
@@ -29,7 +31,7 @@ function BtodoContainer() {
                 <BtodoList showMod={showMod}></BtodoList>
             }
             {oper === 'I' &&
-                <BtodoInput></BtodoInput>
+                <BtodoInput addTodo={addTodo}></BtodoInput>
             }
             {oper === 'M' &&
                 <BtodoMod></BtodoMod>
