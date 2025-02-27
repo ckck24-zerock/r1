@@ -10,6 +10,8 @@ function BtodoContainer() {
 
     const [arr, setArr] = useState([])
 
+    const [current, setCurrent] = useState(null)
+
     function addTodo(title) {
 
         const newTodo = {tid: uuidv4(), title:title}
@@ -19,8 +21,20 @@ function BtodoContainer() {
         setOper('L')
     }
 
+    function removeTodo(tid) {
+
+        const filteredArr = arr.filter(todo => todo.tid !== tid)
+
+        setArr(filteredArr)
+        setCurrent(null)
+    }
+
+
     function showMod(tid) {
-        setOper('M')
+
+        const currentTodo = arr.filter(todo => todo.tid === tid)[0]
+
+        setCurrent(currentTodo)
     }
 
     return (
@@ -33,8 +47,9 @@ function BtodoContainer() {
             {oper === 'I' &&
                 <BtodoInput addTodo={addTodo}></BtodoInput>
             }
-            {oper === 'M' &&
-                <BtodoMod></BtodoMod>
+
+            {current !== null &&
+                <BtodoMod current={current} removeTodo={removeTodo}></BtodoMod>
             }
         </div>
     );
