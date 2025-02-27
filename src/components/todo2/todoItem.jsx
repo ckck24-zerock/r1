@@ -13,7 +13,7 @@ function TodoItem({todo, showModal}) {
                     {title}
                 </div>
                 <div>
-                    <button onClick={showModal}>MOD/DEL</button>
+                    <button onClick={() => showModal(todo)}>MOD/DEL</button>
                 </div>
             </div>
         </li>

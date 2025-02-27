@@ -7,7 +7,8 @@ function TodoSubList({arr, removeTodo}) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const showModal = ()=> {
+    const showModal = (selectedTodo)=> {
+        console.log(selectedTodo)
         setIsModalOpen(true)
     }
 
