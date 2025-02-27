@@ -6,7 +6,7 @@ import {v4 as uuidv4} from "uuid";
 
 function BtodoContainer() {
 
-    const [oper, setOper] = useState('L')
+    const [oper, setOper] = useState('I')
 
     const [arr, setArr] = useState([])
 
@@ -25,11 +25,11 @@ function BtodoContainer() {
 
     return (
         <div className={'w-full h-full bg-cyan-200 min-h-full'}>
-            B Todo Containner
+            B Todo Containner <button onClick={() => setOper('I')}>ADD</button>
 
-            {oper === 'L' &&
-                <BtodoList showMod={showMod}></BtodoList>
-            }
+            <BtodoList showMod={showMod}></BtodoList>
+
+
             {oper === 'I' &&
                 <BtodoInput addTodo={addTodo}></BtodoInput>
             }
