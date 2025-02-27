@@ -3,7 +3,7 @@ import {useState} from "react";
 import Modal from "./Modal.jsx";
 
 
-function TodoSubList({arr, removeTodo}) {
+function TodoSubList({arr, removeTodo,updateTodo}) {
 
     const [current,setCurrent] = useState(null)
 
@@ -24,6 +24,7 @@ function TodoSubList({arr, removeTodo}) {
             {current &&
             <Modal todo={current}
                    removeTodo ={removeTodo}
+                   updateTodo = {updateTodo}
                    onClose={() => setCurrent(null) }>
             </Modal>
             }

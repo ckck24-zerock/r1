@@ -1,6 +1,9 @@
+import {useState} from "react";
 
 
-const Modal = ({ todo, removeTodo, onClose }) => {
+const Modal = ({ todo, removeTodo, updateTodo, onClose }) => {
+
+    const [title, setTitle] = useState(todo.title)
 
     return (
         <div
@@ -19,8 +22,23 @@ const Modal = ({ todo, removeTodo, onClose }) => {
                 >
                     ✖
                 </button>
-                <h2 className="text-xl font-bold mb-4">모달 제목</h2>
-                <p>{todo.title}</p>
+                <h2 className="text-xl font-bold mb-4 ">모달 제목</h2>
+                <p><input
+                    type={'text'}
+                    value={title}
+                    className={'p-2 border-2'}
+                    onChange={(e) => { setTitle(e.target.value)  }}
+                /></p>
+
+                <button
+                    className="mt-4 px-4 m-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+                    onClick={() => {
+                        updateTodo(todo.tid, title)
+                        onClose()
+                    }}
+                >
+                    MODIFY
+                </button>
 
                 <button
                     className="mt-4 px-4 m-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"

@@ -24,6 +24,21 @@ function TodoContainer() {
         setArr(result)
     }
 
+    const updateTodo = (tid, title) => {
+
+        const tempArr = arr.filter(todo => todo.tid === tid)
+
+        if(tempArr.length == 0){
+            return
+        }
+
+        const targetTodo = tempArr[0]
+        targetTodo.title = title
+
+        setArr([...arr])
+
+    }
+
 
 
     return (
@@ -31,7 +46,11 @@ function TodoContainer() {
             <div>Todo Container</div>
 
             <TodoInput addText = {addText} ></TodoInput>
-            <TodoSubList arr={arr} removeTodo={removeTodo}></TodoSubList>
+            <TodoSubList arr={arr}
+                         removeTodo={removeTodo}
+                         updateTodo={updateTodo}>
+
+            </TodoSubList>
         </div>
     );
 }
