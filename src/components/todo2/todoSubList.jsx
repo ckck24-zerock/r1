@@ -1,8 +1,10 @@
-import React from 'react';
 
-function TodoSubList(props) {
+
+function TodoSubList() {
     return (
-        <div></div>
+        <div className={'p-3 bg-amber-200 h-full'}>
+            <div>Todo Sub List</div>
+        </div>
     );
 }
 
