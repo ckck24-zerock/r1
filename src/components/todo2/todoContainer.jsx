@@ -14,7 +14,7 @@ function TodoContainer() {
 
         const obj = {tid: uuidv4() , title:text }
 
-        setArr([...arr,text])
+        setArr([...arr,obj])
     }
 
 
