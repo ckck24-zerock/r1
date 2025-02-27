@@ -1,6 +1,6 @@
 
 
-const Modal = ({ todo, onClose }) => {
+const Modal = ({ todo, removeTodo, onClose }) => {
 
     return (
         <div
@@ -12,6 +12,7 @@ const Modal = ({ todo, onClose }) => {
                 className="bg-white p-6 rounded-lg shadow-lg w-96"
                 onClick={(e) => e.stopPropagation()} // 모달 내부 클릭 시 닫히지 않도록 방지
             >
+
                 <button
                     className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                     onClick={onClose}
@@ -20,8 +21,19 @@ const Modal = ({ todo, onClose }) => {
                 </button>
                 <h2 className="text-xl font-bold mb-4">모달 제목</h2>
                 <p>{todo.title}</p>
+
                 <button
-                    className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+                    className="mt-4 px-4 m-3 py-2 bg-red-600 text-white rounded-md hover:bg-red-700"
+                    onClick={() => {
+                        removeTodo(todo.tid)
+                        onClose()
+                    }}
+                >
+                    DELETE
+                </button>
+
+                <button
+                    className="mt-4 px-4 py-2 m-3 bg-red-600 text-white rounded-md hover:bg-red-700"
                     onClick={() => onClose()}
                 >
                     닫기
