@@ -6,6 +6,7 @@ const Modal = ({ isOpen, onClose, children }) => {
     return (
         <div
             className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            style={{ backgroundColor: 'rgba(169, 169, 169, 0.7)' }}
             onClick={onClose}
         >
             <div
