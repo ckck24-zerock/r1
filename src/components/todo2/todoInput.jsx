@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function TodoInput() {
+function TodoInput({addText}) {
 
     const [text, setText] = useState('')
 
@@ -10,6 +10,9 @@ function TodoInput() {
     }
 
     const clickSave = () => {
+
+        addText(text)
+
         setText('')
     }
 
