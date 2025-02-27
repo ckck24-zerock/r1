@@ -1,5 +1,8 @@
+import {useState} from "react";
 
-function BtodoMod({current, removeTodo}) {
+function BtodoMod({current, removeTodo, updateTodo}) {
+
+    const [titleStr, setTitleStr] = useState(current.title)
 
     return (
         <div
@@ -17,11 +20,14 @@ function BtodoMod({current, removeTodo}) {
                         {current.tid}
                     </div>
                     <div>
-                        {current.title}
+                        <input type='text'
+                               value={titleStr}
+                               className={'p-2 border-1'}
+                               onChange={e => setTitleStr(e.target.value) }/>
                     </div>
                     <div>
                         <button onClick={() => removeTodo(current.tid)}>삭제</button>
-                        <button>수정</button>
+                        <button onClick={() => updateTodo(current.tid, titleStr)}>수정</button>
                         <button>취소</button>
                     </div>
                 </div>

@@ -29,6 +29,15 @@ function BtodoContainer() {
         setCurrent(null)
     }
 
+    function updateTodo(tid, title) {
+
+        const targetTodo = arr.filter(todo => todo.tid === tid)[0]
+
+        targetTodo.title = title
+
+        setArr([...arr])
+        setCurrent(null)
+    }
 
     function showMod(tid) {
 
@@ -49,7 +58,9 @@ function BtodoContainer() {
             }
 
             {current !== null &&
-                <BtodoMod current={current} removeTodo={removeTodo}></BtodoMod>
+                <BtodoMod current={current}
+                          removeTodo={removeTodo}
+                          updateTodo={updateTodo}></BtodoMod>
             }
         </div>
     );
